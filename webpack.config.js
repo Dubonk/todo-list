@@ -9,6 +9,10 @@ module.exports = {
         path: path.resolve(__dirname, 'dist'),
         clean: true,
     },
+    devtool: 'inline-source-map',
+    devServer: {
+        static: './dist',
+    },
     plugins: [
         new HtmlWebpackPlugin({
         title: 'Todo List',
@@ -29,5 +33,8 @@ module.exports = {
                 type: 'asset/resource',
             },
         ],
+    },
+    optimization: {
+        runtimeChunk: 'single',
     },
 };
