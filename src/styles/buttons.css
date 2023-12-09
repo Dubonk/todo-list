@@ -1,0 +1,27 @@
+button {
+    font-size: 22px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: rgb(172, 170, 170);
+}
+
+button:active {
+    transform: scale(0.9);
+}
+
+#addTabBtn {
+    width: 200px;
+    margin-bottom: 15px;
+}
+
+.userProject {
+    cursor: pointer;
+}
+
+#projectTextField {
+    margin-bottom: 15px;
+}
