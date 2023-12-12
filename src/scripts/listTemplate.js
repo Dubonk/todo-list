@@ -1,8 +1,8 @@
-const createList = (function (newTab) {
+const createList = (function (event) {
     const listTab = document.getElementById('listTab');
 
     const listTitle = document.createElement('h2');
-    listTitle.textContent = newTab.textContent;
+    listTitle.textContent = event.target.textContent;
 
     const addToListBtn = document.createElement('button');
     addToListBtn.setAttribute('id', 'addToList');
@@ -12,4 +12,11 @@ const createList = (function (newTab) {
     listTab.appendChild(addToListBtn);
 });
 
-export {createList};
+const clearContent = (function () {
+    const content = document.getElementById('listTab');
+    while(content.firstChild) {
+        content.removeChild(content.lastChild);
+    }
+});
+
+export {createList, clearContent};

@@ -1,5 +1,5 @@
 import '../styles/buttons.css';
-import { createList } from './listTemplate';
+import { createList, clearContent } from './listTemplate';
 
 
 const createTab = (function () {
@@ -23,11 +23,18 @@ const createTab = (function () {
     
             projectsTab.insertBefore(newTab, addTabBtn);
             projectsTab.removeChild(textField);
-            createList(newTab);
-            }
-            
+            } 
+             
         });
     }
+    });
+
+    let newTab = document.getElementsByClassName('userProject');
+    projectsTab.addEventListener('click', function(event) {
+        if(event.target.classList.contains('userProject')) {
+            clearContent();
+            createList(event);
+        }
     });
 });
 
