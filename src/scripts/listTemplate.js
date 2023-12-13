@@ -1,3 +1,5 @@
+import { addToList } from "./addToList";
+
 const createList = (function (event) {
     const listTab = document.getElementById('listTab');
 
@@ -6,10 +8,14 @@ const createList = (function (event) {
 
     const addToListBtn = document.createElement('button');
     addToListBtn.setAttribute('id', 'addToList');
-    addToListBtn.textContent = '+';
+    addToListBtn.textContent = 'Add to list';
 
     listTab.appendChild(listTitle);
     listTab.appendChild(addToListBtn);
+
+    addToListBtn.addEventListener('click', () => {
+        addToList();
+    });
 });
 
 const clearContent = (function () {

@@ -43,10 +43,22 @@ body {
     align-self: center;
 }
 
+.userProject {
+    text-align: center;
+    width: 100%;
+    background-color: #efefef;
+    padding: 10px 15px 10px 15px;
+}
+
+.userProject:hover {
+    background-color: rgb(172, 172, 172);
+}
+
 #listTab {
     display: flex;
     flex: 3;
     flex-direction: column;
+    align-items: center;
     padding-left: 25px;
     padding-right: 25px;
 

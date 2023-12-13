@@ -11,20 +11,23 @@ const createTab = (function () {
 
         if(!textField) {
             textField = document.createElement('input');
+            textField.type = 'text';
             textField.setAttribute('id', 'projectTextField');
             textField.setAttribute('type', 'text');
             projectsTab.insertBefore(textField, addTabBtn).focus();
 
         textField.addEventListener('keypress', (event) => {
+            
             if (event.key === 'Enter') {
+                if (textField.value.trim() !== '') {
             let newTab = document.createElement('h3');
             newTab.classList.add('userProject');
-            newTab.textContent = textField.value;
+            newTab.textContent = textField.value.charAt(0).toUpperCase() + textField.value.slice(1);
     
             projectsTab.insertBefore(newTab, addTabBtn);
             projectsTab.removeChild(textField);
             } 
-             
+        } 
         });
     }
     });
