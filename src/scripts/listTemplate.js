@@ -1,8 +1,7 @@
 import { addToList } from "./addToList";
 
-const createList = function (clickedTab) {
+const createList = function (event) {
   const listTab = document.getElementById("listTab");
-
   const listTitle = document.createElement("h2");
   listTitle.textContent = event.target.textContent + " " +'List';
 

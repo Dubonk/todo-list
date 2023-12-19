@@ -1,5 +1,5 @@
 import "../styles/buttons.css";
-import { createList, clearContent } from "./listTemplate";
+import { createList } from "./listTemplate";
 
 const createTab = function () {
   const projectsTab = document.getElementById("projectsTab");
@@ -57,9 +57,8 @@ const createTab = function () {
       tabsContent[clickedTab].forEach(content => {
         content.style.display = 'block';
       });
-
-      clearContent();
-      createList(clickedTab);
+      
+      createList(event);
     }
   });
 };
