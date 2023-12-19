@@ -10,8 +10,12 @@ const createList = function (event) {
   addToListBtn.setAttribute("id", "addToList");
   addToListBtn.textContent = "Add to list";
 
+  const listContainer = document.createElement('div');
+  listContainer.setAttribute('id', 'listContainer');
+
   listTab.appendChild(listTitle);
   listTab.appendChild(addToListBtn);
+  listTab.appendChild(listContainer);
 
   addToListBtn.addEventListener("click", () => {
 const formExists = document.getElementById('formId');
