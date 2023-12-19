@@ -61,6 +61,7 @@ body {
   align-items: center;
   padding-left: 25px;
   padding-right: 25px;
+  overflow: auto;
 }
 
 #listTab > h2 {
@@ -70,4 +71,14 @@ body {
 
 form {
   margin-top: 25px;
+}
+
+.listItem {
+  background-color: #efefef;
+  padding: 5px 10px 5px 10px;
+  border-radius: 12px;
+  text-align: center;
+  margin-top: 25px;
+  width: 250px;
+  height: 250px;
 }

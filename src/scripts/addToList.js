@@ -1,4 +1,5 @@
 import "../styles/formStyling.css";
+import "../styles/template.css";
 
 const addToList = function () {
   const listContent = document.getElementById("listTab");
@@ -38,23 +39,29 @@ const addToList = function () {
        const notesValue = notesInput.value;
        const dueDateValue = dueDateInput.value;
 
-
-
        const newListItem = document.createElement('div');
-       newListItem.classList.add('list-item');
+       newListItem.classList.add('listItem');
+       const titleTextNode = document.createTextNode(titleValue);
+       const notesTextNode = document.createTextNode(notesValue);
+       const dueDateTextNode = document.createTextNode(`Due: ${dueDateValue}`);
 
-       newListItem.innerHTML = `
-       <h3>${titleValue}</h3>
-       <p>${notesValue}</p>
-       <p>Due Date: ${dueDateValue}</p>
-     `;
+       const titleElement = document.createElement('h3');
+        titleElement.appendChild(titleTextNode);
+
+        const notesElement = document.createElement('p');
+        notesElement.appendChild(notesTextNode);
+
+        const dueDateElement = document.createElement('p');
+        dueDateElement.appendChild(dueDateTextNode);
+
+        newListItem.appendChild(titleElement);
+        newListItem.appendChild(notesElement);
+        newListItem.appendChild(dueDateElement);
 
        listContent.removeChild(form);
        listContent.appendChild(newListItem);
 
   })
-
-  // Get the element with ID 'listContent' and append the form to it
   listContent.appendChild(form);
 };
 export { addToList };
