@@ -1,6 +1,6 @@
 import { addToList } from "./addToList";
 
-const createList = function (event) {
+const createList = function (clickedTab) {
   const listTab = document.getElementById("listTab");
 
   const listTitle = document.createElement("h2");
@@ -35,4 +35,4 @@ const clearContent = function () {
   }
 };
 
-export { createList, clearContent };
+export { createList, clearContent, };

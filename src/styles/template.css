@@ -68,21 +68,25 @@ body {
 }
 
 form {
-  margin-top: 25px;
+  margin:10px 10px 10px 10px;
 }
 
 #listContainer {
   flex: 3;
   display: flex;
+  flex-wrap: wrap;
   width: 100%;
+  margin-left: 15px;
 }
 
 .listItem {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
   background-color: #efefef;
-  padding: 5px 10px 5px 10px;
   border-radius: 12px;
   text-align: center;
-  margin-top: 25px;
+  margin: 10px 10px 10px 10px;
   width: 250px;
   height: 250px;
 }

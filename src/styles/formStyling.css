@@ -5,7 +5,7 @@ form {
   align-items: center;
   justify-content: space-around;
   width: 250px;
-  height: 300px;
+  height: 250px;
   border-radius: 12px;
 }
 
@@ -15,4 +15,5 @@ form > input {
 
 form > textarea {
   width: 200px;
+  height: 100px;
 }

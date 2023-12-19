@@ -29,3 +29,10 @@ button:active {
 #addToList {
   width: 200px;
 }
+
+#deleteFromListBtn {
+  justify-self: flex-end;
+  align-self: center;
+  text-align: center;
+  color: red;
+}
