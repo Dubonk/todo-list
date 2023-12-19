@@ -4,7 +4,7 @@ const createList = function (event) {
   const listTab = document.getElementById("listTab");
 
   const listTitle = document.createElement("h2");
-  listTitle.textContent = event.target.textContent;
+  listTitle.textContent = event.target.textContent + " " +'List';
 
   const addToListBtn = document.createElement("button");
   addToListBtn.setAttribute("id", "addToList");
@@ -14,7 +14,13 @@ const createList = function (event) {
   listTab.appendChild(addToListBtn);
 
   addToListBtn.addEventListener("click", () => {
+const formExists = document.getElementById('formId');
+
+if(!formExists) {
     addToList();
+} else {
+  console.log('form already present');
+}
   });
 };
 

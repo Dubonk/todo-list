@@ -4,6 +4,7 @@ const addToList = function () {
   const listContent = document.getElementById("listTab");
   // Create form element
   const form = document.createElement("form");
+  form.setAttribute('id', 'formId');
 
   // Create input for title
   const titleLabel = document.createElement("label");
@@ -30,10 +31,28 @@ const addToList = function () {
   dueDateInput.setAttribute("name", "dueDate");
   form.appendChild(dueDateInput);
 
-  // Append inputs to the form
-  //   form.appendChild(titleLabel);
-  //   form.appendChild(notesLabel);
-  //   form.appendChild(dueDateLabel);
+  form.addEventListener('submit', function (event) {
+    event.preventDefault();
+
+       const titleValue = titleInput.value;
+       const notesValue = notesInput.value;
+       const dueDateValue = dueDateInput.value;
+
+
+
+       const newListItem = document.createElement('div');
+       newListItem.classList.add('list-item');
+
+       newListItem.innerHTML = `
+       <h3>${titleValue}</h3>
+       <p>${notesValue}</p>
+       <p>Due Date: ${dueDateValue}</p>
+     `;
+
+       listContent.removeChild(form);
+       listContent.appendChild(newListItem);
+
+  })
 
   // Get the element with ID 'listContent' and append the form to it
   listContent.appendChild(form);

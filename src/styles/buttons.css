@@ -25,3 +25,7 @@ button:active {
 #projectTextField {
   margin-bottom: 15px;
 }
+
+#addToList {
+  width: 200px;
+}
