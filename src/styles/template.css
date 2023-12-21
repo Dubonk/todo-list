@@ -71,12 +71,11 @@ form {
   margin:10px 10px 10px 10px;
 }
 
-#listContainer {
-  flex: 3;
+.listContainer {
   display: flex;
   flex-wrap: wrap;
+  justify-content: space-evenly;
   width: 100%;
-  margin-left: 15px;
 }
 
 .listItem {
