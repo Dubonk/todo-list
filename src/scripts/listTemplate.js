@@ -17,6 +17,7 @@ const createList = function (newTab) {
 
   const listContainer = document.createElement('div');
   listContainer.classList.add('listContainer');
+  listContainer.setAttribute('id', newTab.textContent + "listContainer");
 
   listTab.appendChild(listTitle);
   listTab.appendChild(addToListBtn);
@@ -27,18 +28,11 @@ const createList = function (newTab) {
 const formExists = document.getElementById('formId');
 
 if(!formExists) {
-    addToList();
+    addToList(listContainer);
 } else {
   console.log('form already present');
 }
   });
 };
 
-const clearContent = function () {
-  const content = document.getElementById("listTab");
-  while (content.firstChild) {
-    content.removeChild(content.lastChild);
-  }
-};
-
-export { createList, clearContent, };
+export { createList, };

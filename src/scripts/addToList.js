@@ -2,13 +2,11 @@ import "../styles/formStyling.css";
 import "../styles/template.css";
 import { submitForm } from "./submitForm";
 
-const addToList = function () {
-  //const listContent = document.getElementById("listTab");
-  const listContainer = document.querySelector('.listContainer');
-  // Create form element
+const addToList = function (listContainer) {
+  const listContainers = listContainer;
   const form = document.createElement("form");
   form.setAttribute('id', 'formId');
-
+  
   // Create input for title
   const titleLabel = document.createElement("label");
   titleLabel.textContent = "Title: ";
@@ -47,8 +45,8 @@ const addToList = function () {
 
   form.addEventListener('submit', function (event) {
     event.preventDefault();
-    submitForm();
+    submitForm(listContainer);
   })
-  listContainer.appendChild(form);
+  listContainers.appendChild(form);
 };
 export { addToList };

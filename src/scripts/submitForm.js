@@ -1,5 +1,6 @@
-const submitForm = (function () {
-    const listContainer = document.querySelector('.listContainer');
+const submitForm = (function (listContainer) {
+    
+    const listContainers = listContainer;
     const form = document.getElementById('formId');
     const titleInput = document.getElementById('formTitle');
     const notesInput = document.getElementById('formNotes');
@@ -42,10 +43,11 @@ const submitForm = (function () {
         }
     };
 
-    listContainer.removeChild(form);
-    listContainer.appendChild(newListItem);
+    listContainers.removeChild(form);
+    listContainers.appendChild(newListItem);
 
     listContainer.addEventListener('click', removeListItem);
+
 });
 
 export {submitForm};

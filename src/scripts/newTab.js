@@ -5,7 +5,6 @@ const createTab = function () {
   const projectsTab = document.getElementById("projectsTab");
   const addTabBtn = document.getElementById("addTabBtn");
   const tabsContent = {};
-  //const listTab = document.querySelectorAll('listTab');
 
   addTabBtn.addEventListener("click", () => {
     let textField = document.getElementById("projectTextField");
@@ -47,21 +46,10 @@ const createTab = function () {
 
   projectsTab.addEventListener("click", function (event) {
     if (event.target.classList.contains("userProject")) {
-      //listTab.setAttribute('id', event.target.textContent);
-      //const tabName = event.target.textContent;
-      //const tabElement = document.getElementById(tabName);
-
-    // if (tabElement) {
-    //   console.log(`Element with ID '${tabName}' exists.`);
-    //   //listTab.style.display = 'none';
-    //   tabElement.style.display = 'flex';
-    //   }
-
 
       const clickedTabName = event.target.textContent;
       const clickedTabElement = document.getElementById(clickedTabName);
       if (clickedTabElement) {
-        console.log(`Element with ID '${clickedTabName}' exists.`);
         
         // Loop through all tabs and hide their corresponding lists
         Object.keys(tabsContent).forEach(tabName => {
