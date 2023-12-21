@@ -1,20 +1,27 @@
 import { addToList } from "./addToList";
+// create the whole list tab instead of just title and container
 
-const createList = function (event) {
-  const listTab = document.getElementById("listTab");
+
+const createList = function (newTab) {
+  const content = document.getElementById('content');
+  const listTab = document.createElement('div');
+  listTab.classList.add('listTab');
+  listTab.setAttribute('id', newTab.textContent);
   const listTitle = document.createElement("h2");
-  listTitle.textContent = event.target.textContent + " " +'List';
+  listTitle.textContent = newTab.textContent + " " +'List';
 
   const addToListBtn = document.createElement("button");
-  addToListBtn.setAttribute("id", "addToList");
+  addToListBtn.classList.add('addToList');
+  //addToListBtn.setAttribute("id", "addToList");
   addToListBtn.textContent = "Add to list";
 
   const listContainer = document.createElement('div');
-  listContainer.setAttribute('id', 'listContainer');
+  listContainer.classList.add('listContainer');
 
   listTab.appendChild(listTitle);
   listTab.appendChild(addToListBtn);
   listTab.appendChild(listContainer);
+  content.appendChild(listTab);
 
   addToListBtn.addEventListener("click", () => {
 const formExists = document.getElementById('formId');

@@ -32,7 +32,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  flex: 1;
+  width: 260px;
   border-right: 1px solid grey;
   padding-left: 15px;
   padding-right: 15px;
@@ -53,8 +53,8 @@ body {
   background-color: rgb(172, 172, 172);
 }
 
-#listTab {
-  display: flex;
+.listTab {
+  display: none;
   height: 100%;
   flex: 3;
   flex-direction: column;

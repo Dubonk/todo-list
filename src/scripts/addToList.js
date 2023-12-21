@@ -4,7 +4,7 @@ import { submitForm } from "./submitForm";
 
 const addToList = function () {
   //const listContent = document.getElementById("listTab");
-  const listContainer = document.getElementById('listContainer');
+  const listContainer = document.querySelector('.listContainer');
   // Create form element
   const form = document.createElement("form");
   form.setAttribute('id', 'formId');

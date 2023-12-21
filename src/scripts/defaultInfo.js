@@ -26,18 +26,13 @@ const createTemplate = function () {
   projectsTab.appendChild(projectTitle);
   projectsTab.appendChild(addTabBtn);
 
-  const listTab = document.createElement("div");
-  listTab.setAttribute("id", "listTab");
-
-  //const listTitle = document.createElement('h2');
-  //listTitle.textContent = "List Name"; // The list name might be added in another module so it can change when a new project is selected.
-
-  //listTab.appendChild(listTitle);
+  //const listTab = document.createElement("div");
+  //listTab.classList.add('listTab');
 
   document.body.appendChild(title);
   document.body.appendChild(content);
   content.appendChild(projectsTab);
-  content.appendChild(listTab);
+  //content.appendChild(listTab);
 };
 
 export { createTemplate };

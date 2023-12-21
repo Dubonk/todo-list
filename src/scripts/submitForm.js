@@ -1,5 +1,5 @@
 const submitForm = (function () {
-    const listContainer = document.getElementById('listContainer');
+    const listContainer = document.querySelector('.listContainer');
     const form = document.getElementById('formId');
     const titleInput = document.getElementById('formTitle');
     const notesInput = document.getElementById('formNotes');
