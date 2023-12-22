@@ -38,10 +38,10 @@ const createTab = function () {
   });
 
   let defaultTab = document.createElement('h3');
-  defaultTab.textContent = 'Market';
+  defaultTab.textContent = "Today";
   defaultTab.classList.add('userProject');
   projectsTab.insertBefore(defaultTab, addTabBtn);
-  tabsContent['Market'] = [];
+  tabsContent["Today"] = [];
   createList(defaultTab);
 
   projectsTab.addEventListener("click", function (event) {

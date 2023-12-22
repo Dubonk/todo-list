@@ -1,3 +1,5 @@
+import dele from '../svg/delete.svg';
+
 const submitForm = (function (listContainer) {
     
     const listContainers = listContainer;
@@ -15,10 +17,14 @@ const submitForm = (function (listContainer) {
     const notesTextNode = document.createTextNode(notesValue);
     const dueDateTextNode = document.createTextNode(`Due: ${dueDateValue}`);
 
-    const deleteBtn = document.createElement('button');
+    const del = new Image();
+    del.classList.add('deleteSvg');
+    del.src = dele;
+
+    const deleteBtn = document.createElement('div');
     deleteBtn.setAttribute('id', 'deleteFromListBtn');
     deleteBtn.classList.add('deleteBtn');
-    deleteBtn.textContent = 'x';
+    deleteBtn.appendChild(del);
 
     const titleElement = document.createElement('h3');
      titleElement.appendChild(titleTextNode);
@@ -35,7 +41,7 @@ const submitForm = (function (listContainer) {
      newListItem.appendChild(deleteBtn);
 
      const removeListItem = function (event) {
-        if (event.target.classList.contains('deleteBtn')) {
+        if (event.target.classList.contains('deleteSvg')) {
             const listItem = event.target.closest('.listItem');
             if (listItem && listContainer.contains(listItem)) {
                 listContainer.removeChild(listItem);

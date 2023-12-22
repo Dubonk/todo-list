@@ -27,7 +27,9 @@ button:active {
 }
 
 .addToList {
-  width: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 #deleteFromListBtn {
@@ -35,4 +37,20 @@ button:active {
   align-self: center;
   text-align: center;
   color: red;
+  cursor: pointer;
+}
+
+.addSvg {
+  width: 30px;
+  padding: 5px;
+}
+
+.addSvg:hover {
+  transform: rotate(180deg);
+  transition: transform .7s ease;
+}
+
+.deleteSvg {
+  width: 30px;
+  padding: 5px;
 }

@@ -1,4 +1,5 @@
 import { addToList } from "./addToList";
+import addSvg from "../svg/add.svg";
 // create the whole list tab instead of just title and container
 
 
@@ -10,10 +11,13 @@ const createList = function (newTab) {
   const listTitle = document.createElement("h2");
   listTitle.textContent = newTab.textContent + " " +'List';
 
+  const addIcon = new Image();
+  addIcon.classList.add('addSvg');
+  addIcon.src = addSvg;
+
   const addToListBtn = document.createElement("button");
   addToListBtn.classList.add('addToList');
-  //addToListBtn.setAttribute("id", "addToList");
-  addToListBtn.textContent = "Add to list";
+  addToListBtn.appendChild(addIcon);
 
   const listContainer = document.createElement('div');
   listContainer.classList.add('listContainer');
