@@ -1,4 +1,5 @@
 import dele from '../svg/delete.svg';
+import check from '../svg/checkmark.svg';
 
 const submitForm = (function (listContainer) {
     
@@ -17,14 +18,24 @@ const submitForm = (function (listContainer) {
     const notesTextNode = document.createTextNode(notesValue);
     const dueDateTextNode = document.createTextNode(`Due: ${dueDateValue}`);
 
+    const checkImg = new Image();
+    checkImg.classList.add('hidden');
+    checkImg.src = check;
+
     const del = new Image();
+    del.classList.add('svg');
     del.classList.add('deleteSvg');
+    del.setAttribute('id', 'deleteFromListBtn')
     del.src = dele;
 
-    const deleteBtn = document.createElement('div');
-    deleteBtn.setAttribute('id', 'deleteFromListBtn');
-    deleteBtn.classList.add('deleteBtn');
-    deleteBtn.appendChild(del);
+    const markContainer = document.createElement('div');
+    markContainer.classList.add('circle');
+    markContainer.setAttribute('id', 'markDone');
+
+    const buttonContainer = document.createElement('div');
+    buttonContainer.setAttribute('id', 'buttonContainer')
+    buttonContainer.appendChild(del)
+    buttonContainer.appendChild(markContainer)
 
     const titleElement = document.createElement('h3');
      titleElement.appendChild(titleTextNode);
@@ -38,7 +49,16 @@ const submitForm = (function (listContainer) {
      newListItem.appendChild(titleElement);
      newListItem.appendChild(notesElement);
      newListItem.appendChild(dueDateElement);
-     newListItem.appendChild(deleteBtn);
+     newListItem.appendChild(buttonContainer);
+
+     markContainer.appendChild(checkImg);
+
+     const markComplete = function (event) {
+          if (event.target.classList.contains('circle')) {
+                checkImg.classList.toggle('hidden');
+                checkImg.classList.toggle('shown');
+        }
+    }
 
      const removeListItem = function (event) {
         if (event.target.classList.contains('deleteSvg')) {
@@ -52,7 +72,8 @@ const submitForm = (function (listContainer) {
     listContainers.removeChild(form);
     listContainers.appendChild(newListItem);
 
-    listContainer.addEventListener('click', removeListItem);
+    listContainers.addEventListener('click', removeListItem);
+    markContainer.addEventListener('click', markComplete);
 
 });
 

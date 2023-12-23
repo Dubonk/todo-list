@@ -12,7 +12,8 @@ const createList = function (newTab) {
   listTitle.textContent = newTab.textContent + " " +'List';
 
   const addIcon = new Image();
-  addIcon.classList.add('addSvg');
+  addIcon.classList.add('svg');
+  addIcon.setAttribute('id', 'showFormBtn')
   addIcon.src = addSvg;
 
   const addToListBtn = document.createElement("button");
